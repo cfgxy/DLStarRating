@@ -23,7 +23,7 @@
 	if (self) {
 		[self setImage:star forState:UIControlStateNormal];
 		[self setImage:highlightedStar forState:UIControlStateSelected];
-		[self setImage:highlightedStar forState:UIControlStateHighlighted];
+		[self setImage:star forState:UIControlStateHighlighted];
 		[self setTag:index];
 		[self setImageEdgeInsets:UIEdgeInsetsMake(0, 0, kEdgeInsetBottom, 0)];
 		[self setBackgroundColor:[UIColor clearColor]];
@@ -36,6 +36,11 @@
 
 - (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
 	return self.superview;
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    return;
 }
 
 #pragma mark -
