@@ -28,7 +28,7 @@ DLStarView.h lets you customize the area below the stars, detecting touches. Sim
 
 You can open the `DLStarRating` demo project in XCode and run it on your iPhone as well as in the Simulator. There's a DLStarRatingControl hooked up in `DLStarRatingDemo.xib`, as well as in `DLStarRatingDemoViewController`. It also shows how to set a rating value and use `DLStarRatingDelegate`.
 
-<img src="http://dlinsin-downloads.s3-external-3.amazonaws.com/DLStarRating.png" width="320" height="480"/>
+<img src="https://raw.github.com/dlinsin/DLStarRating/master/DLStarRating.png" width="320" height="480"/>
 
 
 ## Issues and Feature Requests
@@ -38,6 +38,10 @@ Please report issues via GitHub's issue tracker.
 ## ARC
 
 There's an [ARC branch](https://github.com/dlinsin/DLStarRating/tree/4_ARC) which you can use if your App uses the latest&greatest. It'll sooner or later find it's way into master.
+
+## UI Testing
+
+The folder _features_ contains the testing setup needed to [run UI tests with zucchini](https://github.com/dlinsin/DLStarRating/wiki/UI-testing-with-zucchini).
 
 ## License
 

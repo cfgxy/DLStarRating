@@ -21,12 +21,15 @@
 - (id)initWithDefault:(UIImage*)star highlighted:(UIImage*)highlightedStar position:(int)index {
 	self = [super initWithFrame:CGRectMake((star.size.width*index), 0, star.size.width, star.size.height+kEdgeInsetBottom)];
 	if (self) {
-		[self setImage:star forState:UIControlStateNormal];
-		[self setImage:highlightedStar forState:UIControlStateSelected];
-		[self setImage:star forState:UIControlStateHighlighted];
+    [self setStarImage:star highlightedStarImage:highlightedStar];
 		[self setTag:index];
 		[self setImageEdgeInsets:UIEdgeInsetsMake(0, 0, kEdgeInsetBottom, 0)];
 		[self setBackgroundColor:[UIColor clearColor]];
+        if (index == 0) {
+   	        [self setAccessibilityLabel:[NSString stringWithFormat:@"1 star", index]];   
+        } else {
+   	        [self setAccessibilityLabel:[NSString stringWithFormat:@"%d stars", index+1]];   
+        }
 	}
 	return self;
 }
@@ -58,6 +61,12 @@
 	float gapToApply = (frameWidth-widthOfStars)/2;
 	
 	self.frame = CGRectMake((size.width*self.tag) + gapToApply, newY, size.width, size.height);	
+}
+
+- (void)setStarImage:(UIImage*)starImage highlightedStarImage:(UIImage*)highlightedImage {
+    [self setImage:starImage forState:UIControlStateNormal];
+    [self setImage:highlightedImage forState:UIControlStateSelected];
+    [self setImage:starImage forState:UIControlStateHighlighted];
 }
 
 @end
